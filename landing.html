@@ -11,6 +11,11 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Evenox Web App</title>
+    <style>
+        .spla:hover {
+            background-color:inherit !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,22 +24,36 @@
     <nav class="grey">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Evenox</a>
+                <a href="#" class="center brand-logo" >Evenox</a>
                 <a href="#" data-target="mobile-nav" class="sidenav-trigger">
                     <i class="material-icons">menu</i>
                 </a>
+                <ul class="left hide-on-med-and-down">
+                    <li>
+                        <a href="#home">section1</a>
+                    </li>
+                    <li>
+                        <a href="#search">section2</a>
+                    </li>
+                    <li>
+                        <a href="#home">section3</a>
+                    </li>
+                    <li>
+                        <a href="#home">section4</a>
+                    </li>
+                </ul>
                 <ul class="right hide-on-med-and-down">
                     <li>
-                        <a href="#home">Events</a>
+                        <a href="#home" class="spla"><button class="btn-small waves-effect waves-dark grey">Events</button></a>
                     </li>
                     <li>
-                        <a href="#home">Blogs</a>
+                        <a href="#home" class="spla"><button class="btn-small waves-effect waves-dark grey">Blogs</button></a>
                     </li>
                     <li>
-                        <a href="#home">My Profile</a>
+                        <a href="#home" class="spla"><button class="btn-small waves-effect waves-dark grey">My Profile</button></a>
                     </li>
                     <li>
-                        <a href="#home">Users</a>
+                        <a href="#home" class="spla"><button class="btn-small waves-effect waves-dark grey">Users</button></a>
                     </li>
                 </ul>
             </div>
@@ -42,6 +61,7 @@
     </nav>
 
 </div>
+
     <ul class="sidenav" id="mobile-nav">
         <li>
             <a href="#home">Events</a>
@@ -89,6 +109,23 @@
 
 <!--/Slider-->
 
+<!--Search-->
+
+<section id="search" class="section section-search grey darken-1 center scrollspy">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h3>Search Events</h3>
+                <div class="input-field">
+                    <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="Marathon, Hackathon, etc..">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--/Search-->
 
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
@@ -99,7 +136,7 @@
     //slider
     const slider = document.querySelector('.slider');
     M.Slider.init(slider, {
-        indicators: true,
+        indicators: false,
         height: 500,
         transition: 500,
         interval: 6000
