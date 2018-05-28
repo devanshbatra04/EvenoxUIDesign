@@ -41,6 +41,7 @@
         </div>
     </nav>
 
+</div>
     <ul class="sidenav" id="mobile-nav">
         <li>
             <a href="#home">Events</a>
@@ -56,13 +57,53 @@
         </li>
     </ul>
 
-</div>
+<!--Slider-->
+<section class="slider">
+    <ul class="slides">
+        <li>
+            <img src="https://image.ibb.co/hbEMux/resort1.jpg" alt="">
+            <div class="caption center-align">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non illo earum cumque id est!</h5>
+                <a href="#" class="btn btn-large">Learn More</a>
+            </div>
+        </li>
+        <li>
+            <img src="https://image.ibb.co/mn1egc/resort2.jpg" alt="">
+            <div class="caption left-align">
+                <h2>Lorem ipsum dolor sit amet, consectetur.</h2>
+                <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non illo earum cumque id est!</h5>
+                <a href="#" class="btn btn-large">Learn More</a>
+            </div>
+        </li>
+        <li>
+            <img src="https://image.ibb.co/mbCVnH/resort3.jpg" alt="">
+            <div class="caption right-align">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <h5 class="light grey-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam non illo earum cumque id est!</h5>
+                <a href="#" class="btn btn-large">Learn More</a>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<!--/Slider-->
+
 
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script>
     var sideNav = document.querySelector('.sidenav');
     M.Sidenav.init(sideNav,{});
+
+    //slider
+    const slider = document.querySelector('.slider');
+    M.Slider.init(slider, {
+        indicators: true,
+        height: 500,
+        transition: 500,
+        interval: 6000
+    });
 </script>
 </body>
 </html>
