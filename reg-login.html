@@ -16,23 +16,99 @@
     </head>
 <body>
 
-<h1>Register form</h1>
 
-<form action="/register" method="POST">
+<div class="navbar-fixed">
+    <nav class="grey">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="center brand-logo" >Evenox</a>
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="left hide-on-med-and-down">
+                    <li>
+                        <a href="#home">section1</a>
+                    </li>
+                    <li>
+                        <a href="#search">section2</a>
+                    </li>
+                    <li>
+                        <a href="#home">section3</a>
+                    </li>
+                    <li>
+                        <a href="#home">section4</a>
+                    </li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="#home" class="spla"><button class="btn-small waves-effect waves-dark grey">Events</button></a>
+                    </li>
+                    <li>
+                        <a href="#home" class="spla"><button class="btn-small waves-effect waves-dark grey">Blogs</button></a>
+                    </li>
+                    <li>
+                        <a href="#home" class="spla"><button class="btn-small waves-effect waves-dark grey">My Profile</button></a>
+                    </li>
+                    <li>
+                        <a href="#home" class="spla"><button class="btn-small waves-effect waves-dark grey">Users</button></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <input type="text" name="username" placeholder="Username">
+</div>
 
-    <input type="password" name="password" placeholder="Password">
+<ul class="sidenav" id="mobile-nav">
+    <li>
+        <a href="#home">Events</a>
+    </li>
+    <li>
+        <a href="#home">Blogs</a>
+    </li>
+    <li>
+        <a href="#home">My Profile</a>
+    </li>
+    <li>
+        <a href="#home">Users</a>
+    </li>
+</ul>
 
-    <input type="text" name="name" placeholder="name">
 
-    <input type="email" name="email" placeholder="email">
+<div class="container">
+    <div class="row">
 
-    <input type="text" name="phone" placeholder="Phone Number">
+        <div class="col s12 m3">
+            <h1>login form</h1>
+            <form action="/login" method="POST">
+                <div class="input-field">
+                    <input type="text" name="username" placeholder="password">
+                    <input type="password" name="password" placeholder="password">
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+        <div class="col s12 m4">
+            <h3>Register</h3>
+            <form action="/register" method="POST">
+                <div class="input-field">
+                    <input type="text" name="username" placeholder="Username">
 
-    <input type="submit">
+                    <input type="password" name="password" placeholder="Password">
 
-</form>
+                    <input type="text" name="name" placeholder="name">
+
+                    <input type="email" name="email" placeholder="email">
+
+                    <input type="text" name="phone" placeholder="Phone Number">
+
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
