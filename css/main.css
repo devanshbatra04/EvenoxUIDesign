@@ -7,3 +7,6 @@
     width:90% !important;
     border: #f4f4f4f4 3px solid !important;
 }
+.section-featured img{
+    max-height: 200px !important;
+}
