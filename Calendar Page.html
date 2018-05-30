@@ -27,7 +27,8 @@
                 events: 'https://fullcalendar.io/demo-events.json',
                 color: 'black',
                 textColor: 'yellow',
-                height:'parent'
+                height:'parent',
+                defaultView:'month'
             })
 
 
@@ -77,14 +78,39 @@
         </nav>
 
     </div>
-    <div class="container">
-        <div class="col m6">
+    <section class="section section-info grey">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/g/200/?random" alt="Profile-pic">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <h4>Welcome {{USERNAME}}</h4>
+                                <p>I am a very simple card. I am good at containing small bits of information.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">This is a link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h3 class="center">Your Calendar</h3>
             <div style="height:100vh">
                 <div id="calendar">
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
 
 
 </body>
