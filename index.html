@@ -7,6 +7,8 @@
     <script src='lib/jquery.min.js'></script>
     <script src='lib/moment.min.js'></script>
     <script src='lib/fullcalendar.js'></script>
+    <script src='js/theme-chooser.js'></script>
+
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -14,25 +16,118 @@
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/jquery.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+    <!--<script>-->
+        <!--$(function() {-->
+
+            <!--// page is now ready, initialize the calendar...-->
+
+            <!--$('#calendar').fullCalendar({-->
+                <!--// put your options and callbacks here-->
+                <!--header : {-->
+                    <!--left : 'prev, next, today',-->
+                    <!--center: 'title',-->
+                    <!--right: 'month, agendaWeek'-->
+                <!--},-->
+                <!--events: 'https://fullcalendar.io/demo-events.json',-->
+                <!--color: 'black',-->
+                <!--textColor: 'yellow',-->
+                <!--height:'parent',-->
+                <!--defaultView:'month'-->
+            <!--})-->
+
+
+        <!--});-->
+    <!--</script>-->
     <script>
-        $(function() {
 
-            // page is now ready, initialize the calendar...
+        $(document).ready(function() {
 
-            $('#calendar').fullCalendar({
-                // put your options and callbacks here
-                events: 'https://fullcalendar.io/demo-events.json',
-                color: 'black',
-                textColor: 'yellow',
-                height:'parent',
-                defaultView:'month'
-            })
+            initThemeChooser({
 
+                init: function(themeSystem = 'jquery-ui') {
+                    $('#calendar').fullCalendar({
+                        themeSystem: themeSystem,
+                        header: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay,listMonth'
+                        },
+                        defaultDate: '2018-03-12',
+                        weekNumbers: true,
+                        navLinks: true, // can click day/week names to navigate views
+                        editable: true,
+                        eventLimit: true, // allow "more" link when too many events
+                        events: [
+                            {
+                                title: 'All Day Event',
+                                start: '2018-03-01'
+                            },
+                            {
+                                title: 'Long Event',
+                                start: '2018-03-07',
+                                end: '2018-03-10'
+                            },
+                            {
+                                id: 999,
+                                title: 'Repeating Event',
+                                start: '2018-03-09T16:00:00'
+                            },
+                            {
+                                id: 999,
+                                title: 'Repeating Event',
+                                start: '2018-03-16T16:00:00'
+                            },
+                            {
+                                title: 'Conference',
+                                start: '2018-03-11',
+                                end: '2018-03-13'
+                            },
+                            {
+                                title: 'Meeting',
+                                start: '2018-03-12T10:30:00',
+                                end: '2018-03-12T12:30:00'
+                            },
+                            {
+                                title: 'Lunch',
+                                start: '2018-03-12T12:00:00'
+                            },
+                            {
+                                title: 'Meeting',
+                                start: '2018-03-12T14:30:00'
+                            },
+                            {
+                                title: 'Happy Hour',
+                                start: '2018-03-12T17:30:00'
+                            },
+                            {
+                                title: 'Dinner',
+                                start: '2018-03-12T20:00:00'
+                            },
+                            {
+                                title: 'Birthday Party',
+                                start: '2018-03-13T07:00:00'
+                            },
+                            {
+                                title: 'Click for Google',
+                                url: 'http://google.com/',
+                                start: '2018-03-28'
+                            }
+                        ]
+                    });
+                },
+
+                change: function(themeSystem) {
+                    $('#calendar').fullCalendar('option', 'themeSystem', themeSystem);
+                }
+
+            });
 
         });
+
     </script>
 
 </head>
